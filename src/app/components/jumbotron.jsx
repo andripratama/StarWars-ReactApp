@@ -8,27 +8,30 @@ var People = require('./people.jsx');
 var request = require('request');
 
 var Jumbotron = React.createClass({
-	
-	loadData: function () {
-        $.ajax({
-            url: 'http://swapi.co/api/people/',
-            dataType: 'json',
-            success: function (people) {
-                this.setState({people: people})
-				
-            }.bind(this),
-            error: function (xhr, status, err) {
-                console.log(xhr);
-                console.log(status);
-                console.log(err);
-            }.bind(this)
-        });
-    },
-    getInitialState: function () {
-        return { people: [] }
-    },
-    componentDidMount: function () {
-        this.loadData();
+     getInitialState: function() {
+        return {
+            data: [
+            {
+            name: 'TrackMaven',
+            height: 'Software Maven',
+            mass: 'Washington, DC, USA',
+            hair_color: 'Angular.js, Django, ElasticSearch',
+            skin_color: '4 April 2015',
+            eye_color: 'asdas',
+            birth_year: 'tes',
+            gender: 'Engineer'
+            },{
+            name: 'TrackMaven',
+            height: 'Software Maven',
+            mass: 'Washington, DC, USA',
+            hair_color: 'Angular.js, Django, ElasticSearch',
+            skin_color: '4 April 2015',
+            eye_color: 'asdas',
+            birth_year: 'tes',
+            gender: 'Engineer'
+            }
+            ]
+        };
     },
 	render: function() {
 		return (
@@ -48,7 +51,6 @@ var Jumbotron = React.createClass({
                     )
                 })}
 			</div>
-							
 		);
 	}
 });
